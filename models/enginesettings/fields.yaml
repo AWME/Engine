@@ -1,0 +1,49 @@
+# ===================================
+#  Form Field Definitions
+#  
+# ===================================
+
+tabs:
+    fields:
+
+        host:
+            label: host
+            default: localhost
+            tab: Database
+            span: auto
+        port:
+            label: Port
+            tab: Database
+            span: auto
+        driver:
+            label: Driver
+            tab: Database
+            default: mysql
+            span: auto
+        database:
+            label: Database
+            tab: Database
+            span: auto
+        username:
+            label: Username
+            tab: Database
+            span: auto
+        password: 
+            label: Password
+            tab: Database
+            type: password
+            span: auto
+        charset:
+            label: Charset
+            tab: Database
+            default: utf8 
+            span: auto
+        collation:
+            label: Collation
+            tab: Database
+            default: utf8_unicode_ci
+            span: auto
+        prefix:
+            label: Prefix
+            tab: Database
+            span: auto

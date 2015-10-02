@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Engine
+
+# Model Form Field configuration
+form: $/awme/engine/models/engine/fields.yaml
+
+# Model Class name
+modelClass: AWME\Engine\Models\Engine
+
+# Default redirect location
+defaultRedirect: awme/engine/engine
+
+# Create page
+create:
+    title: Create Engine
+    redirect: awme/engine/engine/update/:id
+    redirectClose: awme/engine/engine
+
+# Update page
+update:
+    title: Edit Engine
+    redirect: awme/engine/engine
+    redirectClose: awme/engine/engine
+
+# Preview page
+preview:
+    title: Preview Engine

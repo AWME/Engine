@@ -1,0 +1,16 @@
+{
+    "name": "AWME Engine",
+    "description": "Awebsome Engine",
+    "homepage": "http://awebsome.me",
+    "keywords": ["awme","engine","awebsome"],
+    "authors": [
+        {
+            "name": "LucasZdv",
+            "email": "lucaszdv@awebsome.me"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "laravelcollective/remote": "5.1.*"
+    }
+}
