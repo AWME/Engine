@@ -1,0 +1,119 @@
+# ===================================
+#  Form Field Definitions
+#  
+#   'host'      => 'localhost',
+#   'username'  => 'root',
+#   'password'  => 'password',
+#   'key'       => '',
+#   'keyphrase' => '',
+#   'root'      => '{{site path}}',
+# ===================================
+
+tabs:
+    fields:
+# ===================================
+#  SSH Settings
+# ===================================
+        ssh_host:
+            label: "Host/IP"
+            commentAbove: "Your Server Host or IP"
+            type: text
+            default: "localhost"
+            required: true
+            tab: "SSH Connection"
+            span: left
+
+        ssh_root_path:
+            label: "Root Path"
+            commentAbove: "Place the root directory of your main project"
+            type: text
+            required: true
+            tab: "SSH Connection"
+            placeholder: /www/yourMainsite.com
+            span: right
+
+        ssh_user:
+            label: "Username"
+            commentAbove: "SSH Username"
+            type: text
+            required: true
+            tab: "SSH Connection"
+            span: left
+
+        ssh_password:
+            label: "Password"
+            commentAbove: "SSH Password"
+            type: password
+            required: true
+            tab: "SSH Connection"
+            span: right
+
+        ssh_key:
+            label: "Key"
+            commentAbove: "SSH with key"
+            type: text
+            tab: "SSH Connection"
+            span: left
+            placeholder: Optional
+
+        ssh_keyphrase:
+            label: "Keyphrase"
+            commentAbove: "SSH with keyphrase"
+            type: text
+            tab: "SSH Connection"
+            span: right
+            placeholder: Optional
+
+        ssh_commands:
+            label: "Enable Commands"
+            commentAbove: "It indicates the authorized commands. (indicate as json)"
+            type: text
+            required: true
+            tab: SSH Connection
+            default: '["awme","git","php artisan","composer","npm"]'
+
+# ===================================
+#  Database Settings
+# ===================================
+        db_host:
+            label: host
+            default: localhost
+            tab: Database
+            span: auto
+        db_port:
+            label: Port
+            tab: Database
+            span: auto
+        db_driver:
+            label: Driver
+            tab: Database
+            default: mysql
+            span: auto
+        db_name:
+            label: Database
+            tab: Database
+            default: mysql
+            span: auto
+        db_user:
+            label: Username
+            tab: Database
+            span: auto
+        db_password: 
+            label: Password
+            tab: Database
+            type: password
+            span: auto
+        db_charset:
+            label: Charset
+            tab: Database
+            default: utf8 
+            span: auto
+        db_collation:
+            label: Collation
+            tab: Database
+            default: utf8_unicode_ci
+            span: auto
+        db_prefix:
+            label: Prefix
+            tab: Database
+            span: auto

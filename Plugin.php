@@ -5,7 +5,8 @@ use System\Classes\PluginBase;
 use App;
 use Config;
 
-use AWME\Engine\Models\SshSettings;
+use AWME\Engine\Classes\Configurator;
+
 use Illuminate\Foundation\AliasLoader;
 
 /**
@@ -22,9 +23,10 @@ class Plugin extends PluginBase
     public function pluginDetails()
     {
         return [
-            'name'        => 'Engine',
-            'description' => 'Awebsome Engine',
-            'author'      => 'AWME',
+            'name'        => 'OctoEngine',
+            'description' => 'Engine for AWME Plugins',
+            'author'      => 'AWME, LucasZdv',
+            'homepage'    => 'http://awebsome.me',
             'icon'        => 'icon-cogs'
         ];
     }
@@ -34,17 +36,8 @@ class Plugin extends PluginBase
     */
     public function boot()
     {   
-        /**
-         * Register "/config/remote.php" for SSH
-         */
-        
-        Config::set('remote.default', 'production');
-        Config::set('remote.connections.production.host',       SshSettings::get('host'));
-        Config::set('remote.connections.production.username',   SshSettings::get('username'));
-        Config::set('remote.connections.production.password',   SshSettings::get('password'));
-        Config::set('remote.connections.production.key',        SshSettings::get('key'));
-        Config::set('remote.connections.production.keyphrase',  SshSettings::get('keyphrase'));
-        Config::set('remote.connections.production.root',       SshSettings::get('root'));
+        $Configurator = new Configurator;
+        $Configurator->setRemote();
 
         // Register ServiceProviders
         //App::register('Collective\Remote\RemoteServiceProvider');
@@ -73,29 +66,17 @@ class Plugin extends PluginBase
     {
         return [
 
-            //SSH Remote Connection Settings
-            'engine_settings'  => [
-                'label'       => 'Engine Settings',
+            //Connection Settings
+            'connection_settings'  => [
+                'label'       => 'Connection Settings',
                 'description' => 'Settings of AWME Engine',
-                'category'    => 'Engine',
+                'category'    => 'OctoMain',
                 'icon'        => 'icon-terminal',
-                'class'       => 'AWME\Engine\Models\EngineSettings',
+                'class'       => 'AWME\Engine\Models\Settings',
                 'order'       => 409,
-                'permissions' => [ 'awme.engine.settings' ],
+                //'permissions' => [ 'awme.engine.settings' ],
                 'keywords'    => 'engine'
             ],
-
-            //SSH Remote Connection Settings
-            'engine_ssh_settings'  => [
-                'label'       => 'SSH Settings',
-                'description' => 'SSH Connections',
-                'category'    => 'Engine',
-                'icon'        => 'icon-terminal',
-                'class'       => 'AWME\Engine\Models\SshSettings',
-                'order'       => 500,
-                'permissions' => [ 'awme.engine.shell_settings' ],
-                'keywords'    => 'ssh remote control'
-            ]
         ];
     }
 
