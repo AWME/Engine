@@ -38,13 +38,14 @@ class Plugin extends PluginBase
     {   
         $Configurator = new Configurator;
         $Configurator->setRemote();
+        $Configurator->setDatabase();
 
         // Register ServiceProviders
-        //App::register('Collective\Remote\RemoteServiceProvider');
+        App::register('Collective\Remote\RemoteServiceProvider');
 
         // Register aliases
-        //$alias = AliasLoader::getInstance();
-        //$alias->alias('SSH', 'Collective\Remote\RemoteFacade');
+        $alias = AliasLoader::getInstance();
+        $alias->alias('SSH', 'Collective\Remote\RemoteFacade');
     }
 
     /**

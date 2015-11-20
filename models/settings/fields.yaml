@@ -14,7 +14,7 @@ tabs:
 # ===================================
 #  SSH Settings
 # ===================================
-        ssh_host:
+        ssh[host]:
             label: "Host/IP"
             commentAbove: "Your Server Host or IP"
             type: text
@@ -23,7 +23,7 @@ tabs:
             tab: "SSH Connection"
             span: left
 
-        ssh_root_path:
+        ssh[root_path]:
             label: "Root Path"
             commentAbove: "Place the root directory of your main project"
             type: text
@@ -32,7 +32,7 @@ tabs:
             placeholder: /www/yourMainsite.com
             span: right
 
-        ssh_user:
+        ssh[username]:
             label: "Username"
             commentAbove: "SSH Username"
             type: text
@@ -40,7 +40,7 @@ tabs:
             tab: "SSH Connection"
             span: left
 
-        ssh_password:
+        ssh[password]:
             label: "Password"
             commentAbove: "SSH Password"
             type: password
@@ -48,7 +48,7 @@ tabs:
             tab: "SSH Connection"
             span: right
 
-        ssh_key:
+        ssh[key]:
             label: "Key"
             commentAbove: "SSH with key"
             type: text
@@ -56,7 +56,7 @@ tabs:
             span: left
             placeholder: Optional
 
-        ssh_keyphrase:
+        ssh[keyphrase]:
             label: "Keyphrase"
             commentAbove: "SSH with keyphrase"
             type: text
@@ -64,7 +64,7 @@ tabs:
             span: right
             placeholder: Optional
 
-        ssh_commands:
+        ssh[commands]:
             label: "Enable Commands"
             commentAbove: "It indicates the authorized commands. (indicate as json)"
             type: text
@@ -75,45 +75,45 @@ tabs:
 # ===================================
 #  Database Settings
 # ===================================
-        db_host:
+        db[host]:
             label: host
             default: localhost
             tab: Database
             span: auto
-        db_port:
+        db[port]:
             label: Port
             tab: Database
             span: auto
-        db_driver:
+        db[driver]:
             label: Driver
             tab: Database
             default: mysql
             span: auto
-        db_name:
+        db[name]:
             label: Database
             tab: Database
             default: mysql
             span: auto
-        db_user:
+        db[user]:
             label: Username
             tab: Database
             span: auto
-        db_password: 
+        db[password]: 
             label: Password
             tab: Database
             type: password
             span: auto
-        db_charset:
+        db[charset]:
             label: Charset
             tab: Database
             default: utf8 
             span: auto
-        db_collation:
+        db[collation]:
             label: Collation
             tab: Database
             default: utf8_unicode_ci
             span: auto
-        db_prefix:
+        db[prefix]:
             label: Prefix
             tab: Database
             span: auto
