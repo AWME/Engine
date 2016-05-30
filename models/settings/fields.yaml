@@ -23,15 +23,6 @@ tabs:
             tab: "SSH Connection"
             span: left
 
-        ssh[root_path]:
-            label: "Root Path"
-            commentAbove: "Place the root directory of your main project"
-            type: text
-            required: true
-            tab: "SSH Connection"
-            placeholder: /www/yourMainsite.com
-            span: right
-
         ssh[username]:
             label: "Username"
             commentAbove: "SSH Username"
@@ -40,21 +31,22 @@ tabs:
             tab: "SSH Connection"
             span: left
 
+        ssh[key]:
+            label: "Key"
+            commentAbove: "SSH with key"
+            type: text
+            tab: "SSH Connection"
+            span: right
+            placeholder: Optional
+
         ssh[password]:
             label: "Password"
             commentAbove: "SSH Password"
             type: password
             required: true
             tab: "SSH Connection"
-            span: right
-
-        ssh[key]:
-            label: "Key"
-            commentAbove: "SSH with key"
-            type: text
-            tab: "SSH Connection"
             span: left
-            placeholder: Optional
+
 
         ssh[keyphrase]:
             label: "Keyphrase"
@@ -72,6 +64,39 @@ tabs:
             tab: SSH Connection
             default: '["awme","git","php artisan","composer","npm"]'
 
+# ===================================
+#  VESTACP Settings
+# ===================================
+        vesta[host]:
+                    label: "Host/IP"
+                    commentAbove: "Your Server Host or IP"
+                    type: text
+                    placeholder: "your.vestacp.com"
+                    required: true
+                    tab: "VestaCP"
+                    span: left
+        vesta[port]:
+                    label: "port"
+                    commentAbove: "Your Server Port"
+                    type: text
+                    default: "8083"
+                    required: true
+                    tab: "VestaCP"
+                    span: left
+        vesta[username]:
+                    label: "Username"
+                    commentAbove: "Vesta Username"
+                    type: text
+                    required: true
+                    tab: "VestaCP"
+                    span: left
+        vesta[password]:
+                    label: "Password"
+                    commentAbove: "Vesta Password"
+                    type: password
+                    required: true
+                    tab: "VestaCP"
+                    span: left
 # ===================================
 #  Database Settings
 # ===================================

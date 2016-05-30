@@ -16,7 +16,7 @@ class Configurator{
             Config::set('remote.connections.production.password',   Settings::get('ssh')['password']);
             Config::set('remote.connections.production.key',        Settings::get('ssh')['key']);
             Config::set('remote.connections.production.keyphrase',  Settings::get('ssh')['keyphrase']);
-            Config::set('remote.connections.production.root',       Settings::get('ssh')['root_path']);
+            Config::set('remote.connections.production.root',       base_path());
         }
 
         /**
